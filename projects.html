@@ -46,7 +46,16 @@
             <hr>
             <div class="aboutHeader"><h2>Prime Factorization Methods & b division attack</h2></div>
             <div class="about">
-
+            Through my number theory research im my free time I have been able to derive a few valuable things regarding prime factorization. The first of which is I have derived an equation
+             that can estimate the distance between two prime factors, q & p, which is extremely helpful for determining a tight range on possible values for each, this results up to a 98%
+            reduction in steps needed to find prime factors. <br>
+            <br>
+            The b division attack is very interesting. There are strong rules in place while generating RSA keys that insure, q – p is a very large number while maximizing p, given q > p. These
+            rules help maximize the number of steps it would take to crack, but they don’t insure against, what I call a “b division” attack. It is the case that if the distance from the square
+            root of q*p can be written in terms of b/ some integer divisor –b is the distance between q and p / 2—then you can factor the number q*p in O(n) time. Cases where this attack can
+            be preformed are rare. 
+            <br> <br>
+            If this sounds interesting here is my paper, (still a work in progress): <a href="papers/Prime_Exploration.pdf">Prime Facotization Methods</a>
             </div>
             <hr>
             <div class="aboutHeader"><h2>Secure Kiosks and ASKVote</h2></div>
