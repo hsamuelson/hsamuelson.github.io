@@ -1,0 +1,196 @@
+<html>
+	<head>
+		<?php
+		header("Access-Control-Allow-Origin: *");
+		?>
+		<title>
+			Toroidal Earth
+			
+		</title>
+		<style>
+		
+			#key, #text
+			{
+				border:2px solid #33FFFF; 
+				border-radius:10px;
+				height: 22px;
+				width: 230px;
+				background-color: black;
+				color: #33FFFF;
+				
+			}
+			
+			body 
+			{
+				background-color: black;
+				font-family: Microsoft JhengHei Light;
+			} 
+			
+			h1
+			{
+				color:  #33FFFF;
+			}
+			p
+			{
+				color: #33FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<?php
+		header("Access-Control-Allow-Origin: *");
+		?>
+		<center>
+			
+			
+			<img src ="realearth.jpg" alt = "its true">
+			<h1>Toroidal Earth Society</h1>
+			<p> 
+				It is a common misconception that the earth is flat. But possibly the most common mistake <br>
+				 individuals make is assuming the earth is round, despite clear evidence that the earth can <br>
+				  be modeled using a torus, and that the model preforms better and explains the time <br> 
+				  dilation of our planet and solar system better. 
+			</p>
+			<br>
+			<br>
+			<p>  |-The Toroidal Earth-|
+			</p>
+			<p>
+				--Overview <br>
+				The Toroidal Earth is quite simple. The earth is a torus which has the sun located at its  <br>
+				center and stars are located in space around the torus. The earth rotates inward, this is <br>
+				what gives us, what we call days. Days are a 24-hour period given by the time it takes the <br>
+				earth to make a complete rotation inward. Given a point on the earth's surface will <br>
+				experience no sun for half the day as the sun will be blocked by the inner edge of the torus. <br>
+				While on the inside of the torus, the stars are not present, because they are blocked by the <br>
+				body of the torus. 
+			</p>
+			<img src ="moreearth2.jpg" alt = "this is real astronots have 'not' in their name because the pictures of the earth they took are not real">
+			<p>
+				--Years <br>
+				Years are completed when the earth itself completes a full rotation. The earth rotates two <br>
+				ways. The earth rotates inwards and creates days, as previously discussed. At the same time <br>
+				the earth also rotates around its center of mass which consequently is the sun, this is a slow <br>
+				gradual rotation that takes a full year to complete. This rotation if examining this from its <br>
+				northmost point is anticlockwise. This explains why some stars change position given month, all <br> 
+				because the earth is rotating. It would be absurd to assume stars are rotating around us, and <br>
+				that we are stagnant. 
+			</p>
+			<img src ="inward.gif" alt = "dont let the gov control you with chem trails">
+			<p>
+				--The Moon <br>
+				The moon orbits our toroidal earth anticlockwise but passes the same point on the surface of <br>
+				the earth every ~27 days. 
+			</p>
+			<p>
+				--Tectonic Plates <br>
+				Someone with a wide berth of math and science knowledge might try to claim that, the inner <br>
+				surface of a torus is smaller, than the exterior of a torus, and hence claim a toroidal earth <br>
+				cannot exist. This is true the inner surface of a torus is smaller, but a toroidal earth is still <br>
+				very real. Tectonic plates under the earths crust and oceans slide over each other to expand and <br>
+				contrast while in transition between the outer and inner torus. This is the reason tectonic plates <br>
+				exist and explain why the earth experiences occasional earthquakes. 
+			</p>
+			
+			<br>
+			<TD>
+			<p>Members Login:</p>
+			<input type="password" id="text" name="text">
+			
+			<input type="button" value="Login" onclick="alert('Incorrect Password')">
+			
+			<p> This website is brought to you by, The Toroidal Earth Society, 2018</P>
+				<p>We Firmly standby all claims</p>
+			</TD>
+		</center>
+		
+	</body>
+</html>
+<script>
+	function encrypt()
+	{
+		// created the lower case alphabet 1-26 	
+		var alphabet = createLowerCaseAlphabet();
+		var text = document.getElementById("text");
+		var textvalue = document.getElementById("text").value;
+		var key = document.getElementById("key").value;
+		var newstring = "";
+		for(var pos = 0; pos < textvalue.length; pos = pos + 1)
+		{
+			//char & key position						
+			var charcode = textvalue.charCodeAt(pos);
+			var keypos = pos%key.length;
+			var charcodekey = key.charCodeAt(keypos);
+			// find char key code
+			var charcodekeyalphabet = findKeyCode(alphabet, charcodekey);
+			// result = char+ char alphabet
+			var resultcode = charcode + charcodekeyalphabet;
+			// rpints the new result
+			if((charcode >= 97 && charcode <= 122) && charcode + charcodekeyalphabet >122)
+			{
+				resultcode = resultcode - 26;
+			}
+			var result = String.fromCharCode(resultcode);
+			newstring = newstring + result;
+		}
+		text.value = newstring;
+	}
+	function createLowerCaseAlphabet()
+	{
+		var alphabet = new Array();
+		var amin = 97;
+		for(var i = 0; i < 26; ++i)
+		{
+			alphabet[i] = amin + i;
+		}
+		return alphabet;
+	}
+	function createUpperCaseAlphabet()
+	{
+		var alphabet = new Array();
+		var amin = 65;
+		var zmax = 90;
+		
+		for(var i = amin; i <= zmax; ++i)
+		{
+			alphabet[alphabet.length] = i;
+		}
+		return alphabet;
+	}
+	function findKeyCode(alphabet, character)
+	{
+		for(var i = 0;i < 26; ++i)
+		{
+			if(alphabet[i] == character)
+				return i;
+		}
+	}
+	function decrypt()
+	{
+		// created the lower case alphabet 1-26 
+		var alphabet = createLowerCaseAlphabet();
+		var text = document.getElementById("text");
+		var textvalue = document.getElementById("text").value;
+		var key = document.getElementById("key").value;
+		var newstring = "";
+		for(var pos = 0; pos < textvalue.length; pos = pos + 1)
+		{
+			//char & key position					
+			var charcode = textvalue.charCodeAt(pos);
+			var keypos = pos%key.length;
+			var charcodekey = key.charCodeAt(keypos);
+			// find char key code
+			var charcodekeyalphabet = findKeyCode(alphabet, charcodekey);
+			// result = char+ char alphabet
+			var resultcode = charcode - charcodekeyalphabet;
+			// prints the new result
+			if((charcode >= 97 && charcode <= 122) && charcode - charcodekeyalphabet < 97)
+			{
+				resultcode = resultcode + 26;
+			}
+			var result = String.fromCharCode(resultcode);
+			newstring = newstring + result;
+		}
+		text.value = newstring;
+	}
+</script>
