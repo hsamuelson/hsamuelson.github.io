@@ -1,0 +1,416 @@
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Serif 4", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background: #fdfdfd;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+
+/* ── Links ── */
+a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Navigation ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+nav .site-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #111;
+}
+nav .site-name:hover {
+  text-decoration: none;
+}
+
+nav .nav-avatar {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  color: #555;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+nav ul li a:hover {
+  color: #111;
+  background: #eee;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  color: #111;
+  background: #e6e6e6;
+}
+
+/* ── Main content ── */
+main {
+  margin-bottom: 3rem;
+}
+
+h1, h2, h3 {
+  color: #111;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 0.8rem;
+}
+
+ul, ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+li {
+  margin-bottom: 0.2rem;
+}
+
+/* ── Home layout ── */
+.home-intro {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.home-intro img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.home-intro .bio {
+  flex: 1;
+}
+
+/* ── Contact info ── */
+.contact-line {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.2rem;
+}
+
+/* ── CV entries ── */
+.cv-entry {
+  margin-bottom: 1.1rem;
+  line-height: 1.45;
+  display: grid;
+  grid-template-columns: 1fr 10rem;
+  column-gap: 1.5rem;
+  row-gap: 0.1rem;
+  align-items: baseline;
+}
+
+.cv-entry .title {
+  font-weight: bold;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.cv-entry .entry-dates {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: right;
+  font-style: italic;
+  color: #555;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.cv-entry .meta {
+  grid-column: 1 / -1;
+  font-style: italic;
+  color: #555;
+  font-size: 0.92rem;
+}
+
+.cv-entry .details {
+  grid-column: 1 / -1;
+  margin-top: 0.2rem;
+}
+
+.cv-entry .details ul {
+  margin-left: 1.1rem;
+  margin-bottom: 0;
+  list-style-type: "–  ";
+}
+
+.cv-entry .details li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.15rem;
+}
+
+.cv-entry .details p {
+  margin-bottom: 0.3rem;
+}
+
+/* ── Skills list (two-column on desktop) ── */
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 0.3rem;
+  list-style-position: inside;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.skills-list li {
+  margin-bottom: 0;
+  break-inside: avoid;
+}
+
+/* ── Horizontal rule ── */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid #ccc;
+  padding-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.8rem;
+    row-gap: 0.3rem;
+    align-items: start;
+  }
+
+  nav .nav-avatar {
+    display: block;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 4px;
+    align-self: center;
+  }
+
+  nav .site-name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    grid-column: 2;
+    grid-row: 2;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  nav ul li a {
+    font-size: 1.05rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Photo lives in the nav on mobile — hide the duplicate in the bio block */
+  .home-intro img {
+    display: none;
+  }
+
+  .home-intro {
+    align-items: flex-start;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .cv-entry {
+    grid-template-columns: 1fr;
+    row-gap: 0.05rem;
+  }
+
+  .cv-entry .entry-dates {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+    font-size: 0.82rem;
+  }
+
+  .cv-entry .meta {
+    grid-row: 3;
+    font-size: 0.85rem;
+  }
+
+  .cv-entry .details {
+    grid-row: 4;
+  }
+
+  .cv-entry .details ul {
+    margin-left: 0.95rem;
+  }
+
+  .cv-entry .details li {
+    margin-bottom: 0.35rem;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    font-size: 15px;
+    padding: 1rem;
+  }
+
+  nav ul li a {
+    padding: 0.2rem 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  nav ul li a:hover {
+    background: transparent;
+    text-decoration: underline;
+  }
+
+  nav ul li a.active {
+    background: transparent;
+    text-decoration: underline;
+  }
+}
+
+/* ── Print ── */
+@media print {
+  body {
+    max-width: none;
+    padding: 0.4in 0.5in;
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  nav,
+  footer {
+    display: none;
+  }
+
+  main {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  h2 {
+    font-size: 12pt;
+    margin-top: 0.7rem;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid #444;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .cv-entry {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 0.6rem;
+    grid-template-columns: 1fr 9rem;
+    column-gap: 1rem;
+  }
+
+  .cv-entry .entry-dates {
+    color: #000;
+    font-size: 9.5pt;
+  }
+
+  .cv-entry .meta {
+    color: #222;
+    font-size: 9.5pt;
+  }
+
+  .cv-entry .details li {
+    margin-bottom: 0.2rem;
+  }
+
+  .skills-list {
+    column-gap: 1.5rem;
+    row-gap: 0.15rem;
+  }
+}
